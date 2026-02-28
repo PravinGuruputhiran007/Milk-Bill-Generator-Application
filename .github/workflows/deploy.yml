@@ -4,11 +4,19 @@ on:
   push:
     branches: [ main ]
 
+permissions:
+  contents: write
+  pages: write
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
+      # If you have a build step, add it here. Example:
+      # - name: Build
+      #   run: npm install && npm run build
 
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v3
