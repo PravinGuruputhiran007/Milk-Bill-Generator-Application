@@ -153,7 +153,7 @@ function viewBill(id) {
     currentRecord = record;
 
     const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
-    const invoiceNumber = "INV-" + String(record.id).slice(-6);
+    const invoiceNumber = "NRG" + String(record.id).slice(-6);
     const billDate = new Date().toLocaleDateString('en-IN', { year: 'numeric', month: 'long', day: 'numeric' });
 
     // calculate dates for each day assuming record.weekDate is the week-ending (Sunday)
@@ -188,7 +188,7 @@ function viewBill(id) {
 
         <div class="bill-info">
             <div class="bill-info-item">
-                <span class="bill-info-label">Invoice No.</span>
+                <span class="bill-info-label">Bill No.</span>
                 <span class="bill-info-value">${invoiceNumber}</span>
             </div>
             <div class="bill-info-item">
@@ -224,8 +224,7 @@ function viewBill(id) {
         </div>
 
         <div style="margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #ddd; font-size: 0.9rem; color: #666;">
-            <p style="margin: 0.5rem 0;"><strong>Payment Terms:</strong> Due within 7 days</p>
-            <p style="margin: 0.5rem 0;"><strong>Bank Details:</strong> Available on request</p>
+            <p style="margin: 0.5rem 0;"><strong>Payment Terms:</strong> Due within 2 days</p>
             <p style="margin-top: 1rem; text-align: center; font-style: italic;">Thank you for your business!</p>
         </div>
     </div>
@@ -251,7 +250,7 @@ document.getElementById("downloadBtn").addEventListener("click", function () {
     const doc = new jsPDF();
     const record = currentRecord;
     const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
-    const invoiceNumber = "INV-" + record.id;
+    const invoiceNumber = "NRG" + record.id;
     const billDate = new Date().toLocaleDateString();
 
     function finishDoc() {
