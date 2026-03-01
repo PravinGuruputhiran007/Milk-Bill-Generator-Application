@@ -528,17 +528,45 @@ textarea:focus {
         text-align: right;
     }
 
-    .daily-entry-table th,
+    .table-wrapper {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        margin-bottom: 1rem;
+    }
+
+    .daily-entry-table {
+        min-width: 550px;
+    }
+
+    .daily-entry-table th {
+        padding: 0.75rem 0.35rem;
+        font-size: 0.75rem;
+    }
+
     .daily-entry-table td {
-        padding: 0.5rem 0.25rem;
-        font-size: 0.9rem;
+        padding: 0.4rem 0.2rem;
+        min-width: 60px;
     }
 
     .daily-entry-table input {
-        padding: 0.5rem;
-        font-size: 0.9rem;
+        padding: 0.4rem 0.15rem;
+        font-size: 0.8rem;
+    }
+
+    .bill-table th,
+    .bill-table td {
+        padding: 0.75rem 0.5rem;
+        font-size: 0.85rem;
     }
 }
+}
+
+/* Table Wrapper for Mobile Scrolling */
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border-radius: 6px;
 }
 
 /* Daily Entry Table Styles */
@@ -548,6 +576,7 @@ textarea:focus {
     margin-bottom: 1.5rem;
     border: 1px solid var(--border-color);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    min-width: 600px;
 }
 
 .daily-entry-table thead {
@@ -556,20 +585,22 @@ textarea:focus {
 }
 
 .daily-entry-table th {
-    padding: 1rem 0.75rem;
+    padding: 1rem 0.5rem;
     text-align: center;
     border: none;
     font-weight: 600;
     text-transform: uppercase;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     letter-spacing: 0.5px;
+    white-space: nowrap;
 }
 
 .daily-entry-table td {
-    padding: 0.75rem;
+    padding: 0.5rem 0.25rem;
     text-align: center;
     border: 1px solid var(--border-color);
     background: #fafafa;
+    min-width: 70px;
 }
 
 .daily-entry-table tbody tr:hover td {
@@ -578,12 +609,12 @@ textarea:focus {
 
 .daily-entry-table input {
     width: 100%;
-    padding: 0.75rem;
+    padding: 0.5rem 0.25rem;
     border: 1px solid var(--border-color);
     border-radius: 4px;
     text-align: center;
     font-family: inherit;
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: 600;
     background: white;
 }
